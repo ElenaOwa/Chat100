@@ -8,11 +8,19 @@ var bcrypt = require('bcrypt');
 
 module.exports = {
 	
-	main:function(reg, res){
+	main:function(req, res){
+		if(req.session.user){
+			Message.subscribe(req.socket);
+			res.view('index',{
+				user: req.session.user,
+				error: false
+		});
+	} else{
 		res.view('index',{
 			user: false,
 			error: false
 		});
+	}
 	},
 	
 	login: function(req,res){
@@ -31,6 +39,13 @@ module.exports = {
 			});
 		}
 	});
+  },
+  logout: function (req, res){
+	  req.session.user = null;
+	  res.view('index',{
+		  user: false,
+		  error: false
+      });
   }
 };
 
