@@ -11,7 +11,11 @@ module.exports = {
   attributes: {
 	username: 'string',
     password: 'string',
-    loggedIn: 'boolean'
+    loggedIn: {
+        type: 'boolean',
+		defaultsTo: 0,
+        required: true
+      }
     
   },
   

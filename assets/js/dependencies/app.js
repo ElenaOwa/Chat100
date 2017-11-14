@@ -106,10 +106,6 @@
   };
 })(jQuery);
 
-/**
- * Chat Room
- */
-
 (function($) {
   var messageDiv = $('#messages'),
     newMessage = $('#new-message'),
@@ -144,7 +140,7 @@
 
   var setChatHeight = function () {
     var height = $(window).height();
-    chatWindow.height(height - 130);
+    chatWindow.height(height - 230);
   };
 
   setInterval(setChatHeight, 100);
@@ -171,7 +167,7 @@
   };
 
   getPastMessages();
-  getUsers();
+  //getUsers();
 
 
   var renderMessage = function (msg) {
