@@ -113,8 +113,8 @@
     userList = $('#users ul'),
     sendButton = $('#send-message');
 
-  //io.socket.request({  method: 'get',  url: '/message'});
-  //io.socket.request({  method: 'get',  url: '/user'});
+  //io.socket.request('/message');
+  //io.socket.request('/user');
 
   io.socket.on('message', function (msg) {
     console.log('message', msg);
